@@ -35,6 +35,10 @@ class main extends PluginBase implements Listener {
 		@mkdir($this->getDataFolder() . "players");
 		$server = Server::getInstance();
 		$server->getCommandMap()->register('pets', new PetCommand($this,"pets"));
+		Entity::registerEntity(OcelotPet::class);
+		Entity::registerEntity(WolfPet::class);
+		Entity::registerEntity(PigPet::class);
+		Entity::registerEntity(RabbitPet::class);
 		Entity::registerEntity(ChickenPet::class);
 		$this->getServer()->getLogger()->info(TextFormat::BLUE . "Pets Registered!");
 		$this->getServer()->getLogger()->info(TextFormat::BLUE . "Data By GamerXzavier");
@@ -80,10 +84,18 @@ class main extends PluginBase implements Listener {
 				$type = self::$type[$player->getName()];
 			}
  			switch ($type){
+ 				case "WolfPet":
+ 				break;
+ 				case "RabbitPet":
+ 				break;
+ 				case "PigPet":
+ 				break;
+ 				case "OcelotPet":
+ 				break;
  				case "ChickenPet":
  				break;
  				default:
- 					$pets = array("ChickenPet");
+ 					$pets = array("OcelotPet", "PigPet", "WolfPet",  "RabbitPet", "ChickenPet");
  					$type = $pets[rand(0, 5)];
  			}
 			$pet = $this->create($player,$type, $source);
@@ -122,7 +134,7 @@ class main extends PluginBase implements Listener {
 		}
 		if($data->exists("name")){ 
 			$name = $data->get("name");
-			$this->getPet($player->getName())->setNameTag($name);
+			$this->getPet($player->getName())->setNameTag("§8"."§8$name");
 		}
 	}
 }

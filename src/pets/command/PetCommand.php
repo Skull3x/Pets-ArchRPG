@@ -34,10 +34,10 @@ class PetCommand extends PluginCommand {
 				if (isset($args[1])){
 					unset($args[0]);
 					$name = implode(" ", $args);
-					$this->main->getPet($sender->getName())->setNameTag("§8".$name);
+					$this->main->getPet($sender->getName())->setNameTag("§8"."§8$name");
 					$sender->sendMessage("Set Name to ".$name);
 					$data = new Config($this->main->getDataFolder() . "players/" . strtolower($sender->getName()) . ".yml", Config::YAML);
-					$data->set("name", $name); 
+					$data->set("name", "§8$name"); 
 					$data->save();
 				}
 				return true;
@@ -64,7 +64,7 @@ class PetCommand extends PluginCommand {
 					$name = implode(" ", $args);
 					$this->main->getPet($sender->getName())->setNameTag("§8".$sender->getName()."§8's Pet");
 					$data = new Config($this->main->getDataFolder() . "players/" . strtolower($sender->getName()) . ".yml", Config::YAML);
-					$data->set("name", $name); 
+					$data->set("name", "§8$name"); 
 					$data->save();
 							return true;
 					}
