@@ -60,7 +60,7 @@ class PetCommand extends PluginCommand {
 					switch ($args[1]){
 						case "pet":
 							$this->main->changePet($sender, "ChickenPet");
-							$sender->sendMessage("§eCongratulation For Ur Purchase On Our Pets Stystem.\n§aPlease Report Some Bugs To Our Email Or Twitter.\n§dEmail: §bArchRPG@gmail.com\n§dTwitter:§b MyrulXzavier\n§ePet Gifted!");
+							$sender->sendMessage("§eCongratulation For Ur Purchase On Our Pets Stystem.\n§aPlease Report Some Bugs To Our Email Or Twitter.\n§dEmail: §bArchRPGOnline@gmail.com\n§dTwitter:§b MyrulXzavier\n§ePet Gifted!");
 					$name = implode(" ", $args);
 					$this->main->getPet($sender->getName())->setNameTag("§8".$sender->getName()."§8's Pet");
 					$data = new Config($this->main->getDataFolder() . "players/" . strtolower($sender->getName()) . ".yml", Config::YAML);
