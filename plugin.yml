@@ -1,0 +1,6 @@
+name: Pets
+author: GamerXzavier
+description: LMOA
+version: 1#Beta
+main: pets\main
+api: [2.0.0] 
